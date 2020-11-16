@@ -1,5 +1,6 @@
 package com.jojodu.book.springboot.domain.posts;
 
+import com.jojodu.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity // 테이블과 링크될 클래스임을 나타냄. SalesManager -> sales_manager
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id // 해달 테이블의 PK 필드를 나타냄
     @GeneratedValue(strategy = GenerationType.IDENTITY) // PK의 생성 규칙을 나타냄. 부트 2.0 에서는 GenerationType.IDENTITY 추가해야만 auto_increment가 됌
